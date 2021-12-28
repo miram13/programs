@@ -1,11 +1,29 @@
-var largest = function(nums) {
-    return nums.sort(function (a,b){
-        var num = (b +   a) - (a +   b)
-        console.log((b +   a) + " - " + (a +  + b) + " = " + (num));
-        if(num > 0) console.log(a + " > " + b);
-        else console.log(a + " < " + b);
-        return (b +   a) - (a +   b);
-    }).join('').replace(/^0*/,'') || '0';
-};
-var lnumber= [2, 10, 54, 90, 8]
-console.log(largest(lnumber));
+function largest(num) {
+    var NUM = [];
+    var res = '';
+    
+    for (var i = 0; i <num.length; i++) {
+        NUM.push(num[i]+'');
+    }
+ 
+    NUM.sort(function (a, b) {
+        var leftRight = a+b;
+        var rightLeft = b+a;
+        
+        if (leftRight > rightLeft) {
+          return -1;
+        }
+        if (leftRight < rightLeft) {
+          return 1;
+        }
+        return 0;
+    });
+ 
+    for (var i = 0; i < NUM.length; i++) {
+        res += NUM[i];
+    }
+ 
+    return parseInt(res);
+ }
+ 
+ console.log(largest([2, 54, 65, 3, 44]));
