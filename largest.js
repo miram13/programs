@@ -1,4 +1,4 @@
-var largestNumber = function(nums) {
+var largest = function(nums) {
     return nums.sort(function (a,b){
         var num = (b +   a) - (a +   b)
         console.log((b +   a) + " - " + (a +  + b) + " = " + (num));
@@ -8,4 +8,4 @@ var largestNumber = function(nums) {
     }).join('').replace(/^0*/,'') || '0';
 };
 var lnumber= [2, 10, 54, 90, 8]
-console.log(largestNumber(lnumber));
+console.log(largest(lnumber));
